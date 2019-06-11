@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TaskT6.Views.PageLogin" BackgroundImageSource="background2" Title="Login" >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20" Spacing="30" >
+            <BoxView HeightRequest="10"/>
+            <Image Source="{Binding Uriimage}" HeightRequest="100" WidthRequest="100"/>
+            <BoxView HeightRequest="50"/>
+            <Frame BackgroundColor="#BF043055" HasShadow="True">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry Text="{Binding EtrEmail}" Placeholder="UserName" HeightRequest="40" TextColor="Black"/>
+                    <!--<Picker x:Name="picker"
+                            Title="{Binding EtrEmail,Mode=OneWayToSource}"
+                            TitleColor="Red"
+                         >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Sincere@april.biz</x:String>
+                                <x:String>Shanna@melissa.tv </x:String>
+                                <x:String>Nathan@yesenia.net</x:String>
+                                <x:String>Julianne.OConner@kory.org</x:String>
+                                <x:String>Lucio_Hettinger@annie.ca</x:String>
+                               
+                            </x:Array>
+                        </Picker.ItemsSource>
+
+                    </Picker>-->
+                    <Entry Text="{Binding Etrpass}" Placeholder="Pass" HeightRequest="40" TextColor="Black" IsPassword="True"/>
+                </StackLayout> 
+            </Frame>
+            <Button Text="Login" Command="{Binding Btnlogincommand}" />
+        </StackLayout>
+            
+
+    </ContentPage.Content>
+</ContentPage>

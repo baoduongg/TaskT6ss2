@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TaskT6.ViewModels"
+             x:Class="TaskT6.Views.PageInforUser"
+              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+              Title="Thông tin người dùng">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ConverterImage x:Key="ConverWidth"/>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView HeightRequest="50"/>
+            <Frame CornerRadius="{Binding Source={x:Reference imgavatar}
+                            , Path=Width,Converter={StaticResource ConverWidth},
+                            ConverterParameter={Binding Source={x:Reference imgavatar},
+                            Path=Width}}"
+                             
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HasShadow="True"
+                               Padding="0">
+                <Image Source="iconlogin.jpg" x:Name="imgavatar"
+                                 
+                                   HeightRequest="{Binding Source={x:Reference imgavatar}, Path=Width}"
+                                   WidthRequest="140"
+                                   Aspect="Fill"/>
+
+
+            </Frame>
+            <StackLayout HorizontalOptions="Center" Padding="20" Spacing="30">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Name :" />
+                    <Label Text="{Binding Name}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="User Name :" />
+                    <Label Text="{Binding Username}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pass :" />
+                    <Label Text="{Binding Password}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Email :" />
+                    <Label Text="{Binding Email}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Phone :" />
+                    <Label Text="{Binding Phone}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WebSite :" />
+                    <Label Text="{Binding Website}"/>
+                </StackLayout>
+                <Button Text="Quay Lai" Command="{Binding Btnback}"/>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

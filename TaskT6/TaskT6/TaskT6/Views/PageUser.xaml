@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TaskT6.ViewModels"
+               xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TaskT6.Views.PageUser"
+             Title="Home"
+            >
+    <ContentPage.BindingContext>
+        <local:PageLoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout >
+            <BoxView HeightRequest="50"/>
+            <Image Source="{Binding Uriimage}" HeightRequest="100" WidthRequest="100" x:Name="imageavatar" VerticalOptions="Center"/>
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" >
+                <Label Text="Email: " TextColor="White"/>
+                <Label Text="{Binding Email}" TextColor="White" x:Name="lblemail" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" >
+                <Label Text="UserName: " TextColor="White"/>
+                <Label Text="{Binding Username}" TextColor="White" x:Name="lblusername"  />
+            </StackLayout> 
+           
+            
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
